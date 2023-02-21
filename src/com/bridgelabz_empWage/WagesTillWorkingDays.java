@@ -2,20 +2,28 @@ package com.bridgelabz_empWage;
 
 import java.util.Random;
 
-public class WagesForMonth {
-    // UC 5 = Calculating Wages for a month.
+public class WagesTillWorkingDays {
+    // UC 6 = Calculate Wages till a condition of total working hours or days is reached for month.
 
     public static void main(String[] args) {
         int fullTimeHours = 8;
         int partTimeHours = 4;
         int wagePerHour = 20;
-        int workingDaysInMonth = 20;
         int fullTimeWageForMonth, partTimeWageForMonth;
+
+        Random random = new Random() ;
+        //Number of Working Days.
+
+        int num1 = random.nextInt(20)+1;
+        System.out.println("Numbers of Total Working Days in Month =" + num1);
+
+        int workingDaysInMonth = num1 ;
+
 
         fullTimeWageForMonth = fullTimeHours * wagePerHour * workingDaysInMonth;
         partTimeWageForMonth = partTimeHours * wagePerHour * workingDaysInMonth;
 
-        Random random = new Random() ;
+
         int num = random.nextInt(3);
 
         switch (num){
@@ -29,8 +37,5 @@ public class WagesForMonth {
                 System.out.println("Employee is Absent");
 
         }
-
-
-
     }
 }
